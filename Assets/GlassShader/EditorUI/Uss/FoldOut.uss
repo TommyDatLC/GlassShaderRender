@@ -1,0 +1,33 @@
+Foldout {
+    border-color: black;
+    border-width: 0.5px;
+    border-radius: 20px;
+    font-size: 20px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    background-color: rgb(192, 192, 192);
+    padding: 10px;
+    height: auto;
+    margin-top: 10px;
+    transition-duration: 0.4s;
+    
+}
+
+Foldout:hover {
+    border-color: ghostwhite;
+    border-radius: 5px;
+    
+}
+
+.mainImage {
+    flex-direction: column;
+}
+
+.btn_GlassShaderIntro {
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    font-size: 14px;
+    width: 100%;
+}

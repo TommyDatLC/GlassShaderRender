@@ -1,0 +1,5 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:TextField name="textfeild_glassAssetName" label="Enter asset name here" select-word-by-double-click="true" hide-placeholder-on-focus="false" style="font-size: 18px;" />
+    <ui:Button text="Create" name="button_create" style="font-size: 17px;" />
+  
+</ui:UXML>

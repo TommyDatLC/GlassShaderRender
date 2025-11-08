@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GlassMaterial_e219bcd3
+  m_Shader: {fileID: 4800000, guid: 7d33f122a8bfdaf47989dcfe27770772, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _DIRECTIONOFGRADIENT_HORIZIONTAL
+  - _EDGEFINDINGMETHOD_PRECISE
+  - _SAMPLETECHNIQUE_SCREEN_SPACE
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _LightTexture:
+        m_Texture: {fileID: 2800000, guid: ed36f91f42fa36b49b2261278a4753ab, type: 3}
+        m_Scale: {x: 1.39, y: 2.55}
+        m_Offset: {x: 2.05, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints:
+    - _BlurIntensity: 10
+    - _DirectionOfGradient: 0
+    - _EdgeFindingMethod: 0
+    - _EdgeFindingPass: 3
+    - _SampleTechnique: 0
+    m_Floats:
+    - _DissolveDirectionStrength: 0.056
+    - _DissolveRadius: 1
+    - _DissolveScaleX: 0.45
+    - _DissolveScaleY: 0.5
+    - _EdgeRadius: 0
+    - _LightLayerBrightness: 1.3
+    - _LightLayerContrast: 3.26
+    - _Xf: 0
+    - _Yf: 0
+    - _stop1: 0.6
+    - _stop2: 0.6
+    m_Colors:
+    - _Color1Gradient: {r: 0, g: 0, b: 0, a: 0}
+    - _Color2Gradient: {r: 0, g: 0, b: 0, a: 0}
+    - _Color3Gradient: {r: 0, g: 0, b: 0, a: 0}
+    - _DimColor: {r: 0, g: 0, b: 0, a: 0.34117648}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

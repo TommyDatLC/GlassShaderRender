@@ -1,0 +1,38 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+
+Texture2D _BlitTexture;
+SamplerState sampler_BlitTexture;
+float2 _BlitSize;
+
+Texture2D _CameraActualBuffer;
+SamplerState _CameraSampler;
+
+
+RWTexture2D<float4> _Result;
+//int _ResultWidth, _ResultHeight;
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    // Get _Blittexture dim
+    int _blitTextureWidth,_blitTextureHeight;
+    _BlitTexture.GetDimensions(_blitTextureWidth,_blitTextureHeight);
+    int OutputWidth, OutputHeight;
+    _CameraActualBuffer.GetDimensions(OutputWidth,OutputHeight);
+    // Caculate new _BlitSize
+    _BlitSize = float2(_blitTextureWidth,_blitTextureHeight)  / float2(OutputWidth,OutputHeight);
+    // TODO: insert actual code here!
+    if (id.x >= OutputWidth || id.y >= OutputHeight)
+        return;
+    float2 uvScreen = float2(id.x / (float)OutputWidth, id.y / (float)OutputHeight);
+    float4 color;
+    if (uvScreen.x <= _BlitSize.x && uvScreen.y <= _BlitSize.y)
+    {
+        float2 uvLocal = uvScreen / _BlitSize;
+        color = _BlitTexture.SampleLevel(sampler_BlitTexture, uvLocal, 0);
+    }
+    _Result[id.xy] = color;
+}

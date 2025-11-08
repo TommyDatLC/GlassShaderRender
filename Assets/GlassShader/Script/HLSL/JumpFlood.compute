@@ -1,0 +1,67 @@
+// #pragma kernel SeedInit
+// #pragma kernel JumpFlood
+// #pragma kernel DistanceRender
+//
+// RWTexture2D<float4> _SeedTex;
+// RWTexture2D<float4> _ResultTex;
+// Texture2D<float4> _InputTex;
+// int _TexSize;
+// int _JumpSize;
+//
+// [numthreads(8,8,1)]
+// void SeedInit(uint3 id : SV_DispatchThreadID)
+// {
+//     if (id.x >= _TexSize || id.y >= _TexSize) return;
+//
+//     float alpha = _InputTex[id.xy].a;
+//     if (alpha > 0.5)
+//     {
+//         _SeedTex[id.xy] = float4(id.xy, 0, 1); // (x, y, 1 = seed)
+//     }
+//     else
+//     {
+//         _SeedTex[id.xy] = float4(0, 0, 0, 0);
+//     }
+// }
+//
+// [numthreads(8,8,1)]
+// void JumpFlood(uint3 id : SV_DispatchThreadID)
+// {
+//     if (id.x >= _TexSize || id.y >= _TexSize) return;
+//
+//     float2 bestSeed = float2(0, 0);
+//     float bestDist = 999999.0;
+//
+//     for (int oy = -1; oy <= 1; oy++)
+//     {
+//         for (int ox = -1; ox <= 1; ox++)
+//         {
+//             int2 sampleCoord = int2(id.xy) + int2(ox, oy) * _JumpSize;
+//             if (sampleCoord.x < 0 || sampleCoord.y < 0 || sampleCoord.x >= _TexSize || sampleCoord.y >= _TexSize) continue;
+//
+//             float4 seed = _SeedTex[sampleCoord];
+//             if (seed.w == 0) continue;
+//
+//             float dist = distance(float2(id.xy), seed.xy);
+//             if (dist < bestDist)
+//             {
+//                 bestDist = dist;
+//                 bestSeed = seed.xy;
+//             }
+//         }
+//     }
+//
+//     _ResultTex[id.xy] = float4(bestSeed, 0, 1);
+// }
+//
+// [numthreads(8,8,1)]
+// void DistanceRender(uint3 id : SV_DispatchThreadID)
+// {
+//     if (id.x >= _TexSize || id.y >= _TexSize) return;
+//
+//     float2 seed = _SeedTex[id.xy].xy;
+//     float dist = distance(float2(id.xy), seed);
+//     float maxDist = length(float2(_TexSize, _TexSize));
+//     float normDist = saturate(dist / maxDist);
+//     _ResultTex[id.xy] = float4(normDist.xxx, 1);
+// }

@@ -1,0 +1,43 @@
+#pragma kernel BlurPass
+//
+#include "GuassianBlur.hlsl"
+RWTexture2D<float4> _Result;
+
+Texture2D _Input;
+SamplerState sampler_Input;
+
+Texture2D _GlobalTexture;
+SamplerState sampler_GlobalTexture;
+
+Texture2D _LightTexture;
+SamplerState sampler_LightTexture;
+float4 _LightTexture_ST;
+
+float _LightLayerContrast;
+float _LightLayerBrightness;
+
+uint2 GetDim(Texture2D a)
+{
+    uint w,h;
+    a.GetDimensions(w,h);
+    return uint2(w,h);
+}
+[numthreads(8,8,1)]
+void BlurPass(uint3 id : SV_DispatchThreadId)
+{
+    
+    uint2 dim = GetDim(_Input);
+    // float2 uv = float2( (float)id.x / dim.x ,(float)id.y / dim.y) ;
+    float4 sampleInput = _Input.Load(int3(id.xy,0));
+    if (sampleInput.w  <= 0.01 || id.x >= dim.x || id.y >= dim.y)
+    {
+        return;
+    }
+    float3 col = GaussianBlur(_Input,sampler_Input,
+        _LightTexture,sampler_LightTexture,_LightTexture_ST,
+        _LightLayerContrast,_LightLayerBrightness,
+        _GlobalTexture,sampler_GlobalTexture,id);
+    _Result[id.xy] = float4(col,1);
+    
+    
+}

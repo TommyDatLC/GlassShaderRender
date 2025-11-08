@@ -1,0 +1,14 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/GlassShader/EditorUI/Uss/FoldOut.uss?fileID=7433441132597879392&amp;guid=35b221f55676d5f4d971097f3ccc9320&amp;type=3#FoldOut" />
+    <ui:VisualElement name="GlassShaderIntro" style="flex-grow: 0; align-self: auto; align-content: flex-start; justify-content: flex-start; align-items: stretch; flex-wrap: wrap; flex-direction: column; overflow: visible; flex-basis: auto; height: auto;">
+        <ui:Label text="GLASS SHADER" style="-unity-font-definition: url(&quot;project://database/Assets/GlassShader/Font/InterBold.otf?fileID=12800000&amp;guid=99cabacb6b3bc6f4b8dad393b849f60f&amp;type=3#InterBold&quot;); -unity-text-align: upper-center; color: rgb(255, 255, 255); -unity-text-outline-color: rgba(0, 0, 0, 0.92); -unity-text-outline-width: 0.2px; width: 100%; font-size: 33%;" />
+        <ui:VisualElement name="ButtonContainer" style="flex-grow: 0; align-items: auto; justify-content: flex-end; align-self: center; align-content: auto; flex-wrap: wrap-reverse; flex-direction: column; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; width: 90%;">
+            <ui:Button text="Open current renderer" name="btn_openCurrentRender" class="btn_GlassShaderIntro" />
+            <ui:Button text="Open legacy material editor" name="OpenOldMaterialControl" class="btn_GlassShaderIntro" />
+            <ui:Button text="Open documentation" name="OpenDoc" class="btn_GlassShaderIntro" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="Setting" style="flex-grow: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; align-content: flex-start; justify-content: center;">
+        <ui:VisualElement name="MainImage" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/GlassShader/EditorUI/UITexture/ShowUp.PNG?fileID=2800000&amp;guid=36bbf2dfb6c906c4cb6882c17dcfd6b9&amp;type=3#ShowUp&quot;); flex-basis: 200px; background-position-y: center; -unity-background-scale-mode: scale-and-crop; border-top-left-radius: 24px; border-top-right-radius: 24px; border-bottom-right-radius: 24px; border-bottom-left-radius: 24px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;" />
+    </ui:VisualElement>
+</ui:UXML>

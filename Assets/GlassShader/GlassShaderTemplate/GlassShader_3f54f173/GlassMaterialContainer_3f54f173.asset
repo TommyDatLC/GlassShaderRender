@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b00ea1723e424eafe9ab7ea562a2ea, type: 3}
+  m_Name: GlassMaterialContainer_3f54f173
+  m_EditorClassIdentifier: Assembly-CSharp::GlassShader.CPURenderPass.GlassMaterialContainer
+  GlassMaterial: {fileID: 2100000, guid: 64767fd03c4b8364d81d21904f028a17, type: 2}
+  hashID: 3f54f173
+  MarkMaterial: {fileID: 2100000, guid: a33102cdc14d3614d8b691a1b51e9460, type: 2}
