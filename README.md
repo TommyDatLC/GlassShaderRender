@@ -1,11 +1,12 @@
 # Glass shader render
-<img width="790" height="491" alt="MorreButton" src="https://github.com/user-attachments/assets/d8d50bf3-eb36-498b-8446-59abba7d982d" /><br>
+<img width="1915" height="960" alt="Capture" src="https://github.com/user-attachments/assets/fbe6d1c5-445d-4898-9c45-9731ba642091" />
+
 Introducing the Glass Shader for Unity UI — a sleek and modern solution for creating stunning, glass-like user interface elements in both URP and HDRP. This shader brings your buttons, panels, and overlays to life with realistic transparency, soft refractions, subtle edge glow, and smooth blurring of background elements. Whether you want sharp rectangular buttons or elegant rounded designs, the shader adapts effortlessly, giving your UI a premium, futuristic feel. Perfect for menus, HUDs, and in-game interfaces, it’s fully customizable, lightweight, and designed to blend seamlessly with any color scheme or background.
 # 🚀 KEY FEATURES 🚀
 
 **Dedicated Glass Render Layer**
 A specialized render layer ensures your glass UI elements blend naturally into your scene while maintaining clear separation from non-glass elements, giving you full control over layering and compositing.
-
+<img width="790" height="491" alt="MorreButton" src="https://github.com/user-attachments/assets/d8d50bf3-eb36-498b-8446-59abba7d982d" /><br>
 **Dynamic Light Texture Controls**
 Fine-tune contrast, brightness, and intensity of your glass surfaces to achieve the perfect balance between clarity and glow, whether you’re aiming for subtle highlights or strong luminous effects.
 
